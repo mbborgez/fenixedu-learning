@@ -135,12 +135,12 @@
 		</button>
 		<div class="dropdown pull-right">
 			<button class="btn btn-sm btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-				{{ selectedYear.year }} 
+				{{ selectedYear.year }}
 				<span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu" role="menu">
 				{% for year in years %}
-					<li><a href="#">{{ year.year }}</a></li>
+				<li><a href="{{ request.url }}/{{ year.externalId }}">{{ year.year }}</a></li>
 				{% endfor %}
 			</ul>
 		</div>
