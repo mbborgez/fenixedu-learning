@@ -21,10 +21,16 @@
         {% endif %}
 
         {% for i in pagination.pages %}
+          {% if loop.index + 1 == pagination.current - 1 %}
+          <li><a href="{{ i.url }}">{{loop.index + 1}}</a></li>
+          {% endif %}
+
+          {% if loop.index + 1 == pagination.current + 1 %}
+          <li><a href="{{ i.url }}">{{loop.index + 1}}</a></li>
+          {% endif %}
+
           {% if loop.index + 1 == pagination.current %}
             <li class="active"><a href="{{ i.url }}">{{loop.index + 1}}</a></li>
-          {% else %}
-            <li><a href="{{ i.url }}">{{loop.index + 1}}</a></li>
           {% endif %}
         {% endfor %}
 
