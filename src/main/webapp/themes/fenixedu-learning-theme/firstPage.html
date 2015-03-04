@@ -133,6 +133,11 @@
 								<h5>{{ i18n('resources.FenixEduLearningResources', 'label.email') }}:</h5>
 								<a href="mailto:{{executionCourse.email}}">{{executionCourse.email}}</a>
 							{% endif %}
+
+							{% if executionCourse.site is not empty and executionCourse.site.alternativeSite is not empty %}
+								<h5>{{ i18n('resources.FenixEduLearningResources', 'label.alternative.site') }}:</h5>
+								<a href="executionCourse.site.alternativeSite">{{executionCourse.site.alternativeSite}}</a>
+							{% endif %}
 						</div>
 
 						<!-- Previous execution courses -->
